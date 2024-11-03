@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.sora-font{
+.sora-font {
     font-family: "Sora", serif;
+}
+
+html {
+    overflow-y: scroll;
 }

@@ -7,7 +7,7 @@ const Footer = () => {
                     <p className="font-medium text-[#09080F99] pb-5">Leading the way in cutting-edge technology and innovation.</p>
                     <hr />
                 </div>
-                <div className="md:flex md:justify-between">
+                <div className="md:flex md:justify-center gap-40">
                     <div className="text-center space-y-2">
                         <h6 className="font-bold text-lg mb-3">Services</h6>
                         <p><a className="link link-hover text-[#09080F99]">Product Support</a></p>
