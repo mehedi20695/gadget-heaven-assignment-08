@@ -1,32 +1,31 @@
 const Footer = () => {
     return (
         <footer className="bg-gray-50">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto pb-10">
                 <div className="text-center space-y-2 py-10">
                     <h3 className="font-bold text-3xl">Gadget Heaven</h3>
                     <p className="font-medium text-[#09080F99] pb-5">Leading the way in cutting-edge technology and innovation.</p>
                     <hr />
                 </div>
-                <div>
-                    <div>
-                        <h6 className="font-bold text-lg">Services</h6>
-                        <a className="link link-hover">Branding</a>
-                        <a className="link link-hover">Design</a>
-                        <a className="link link-hover">Marketing</a>
-                        <a className="link link-hover">Advertisement</a>
+                <div className="md:flex md:justify-between">
+                    <div className="text-center space-y-2">
+                        <h6 className="font-bold text-lg mb-3">Services</h6>
+                        <p><a className="link link-hover text-[#09080F99]">Product Support</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Order Tracking</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Shipping $ Delivery</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Returns</a></p>
                     </div>
-                    <div>
-                        <h6 className="font-bold text-lg">Company</h6>
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
-                        <a className="link link-hover">Press kit</a>
+                    <div className="text-center space-y-2">
+                        <h6 className="font-bold text-lg mb-3">Company</h6>
+                        <p><a className="link link-hover text-[#09080F99]">About us</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Careers</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Contact</a></p>
                     </div>
-                    <div>
-                        <h6 className="font-bold text-lg">Legal</h6>
-                        <a className="link link-hover">Terms of use</a>
-                        <a className="link link-hover">Privacy policy</a>
-                        <a className="link link-hover">Cookie policy</a>
+                    <div className="text-center space-y-2">
+                        <h6 className="font-bold text-lg mb-3">Legal</h6>
+                        <p><a className="link link-hover text-[#09080F99]">Terms Of Service</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Privacy Policy</a></p>
+                        <p><a className="link link-hover text-[#09080F99]">Cookie Policy</a></p>
                     </div>
                 </div>
             </div>
