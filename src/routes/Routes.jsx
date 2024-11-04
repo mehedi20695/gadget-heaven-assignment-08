@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Statistics from "../pages/Statistics";
 import Upcoming from "../pages/Upcoming";
 import Dashboard from "../pages/Dashboard";
+import CardDetails from "../pages/CardDetails";
 
 const routes = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+                loader: () => fetch('../gadgets.json')
             },
             {
                 path: '/statistics',
@@ -28,6 +30,11 @@ const routes = createBrowserRouter([
                 path: '/dashboard',
                 element: <Dashboard></Dashboard>,
             },
+            {
+                path: '/details/:product_id',
+                element: <CardDetails></CardDetails>,
+                loader: () => fetch('../gadgets.json'),
+              },
 
         ]
     },
