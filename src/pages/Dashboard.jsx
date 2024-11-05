@@ -4,6 +4,7 @@ import { MdDisabledByDefault } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import ModalImg from "../assets/group.png"
 import { CartContext } from "../context/CartProvider";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -46,6 +47,9 @@ const Dashboard = () => {
     };
     return (
         <div className="mt-5">
+            <Helmet>
+                <title>Dashboard | Gadget Heaven</title>
+            </Helmet>
             <div className="max-w-7xl mx-auto text-center bg-[#9538E2] py-10">
                 <h2 className="text-3xl font-bold text-white">Dashboard</h2>
                 <p className="text-white w-2/3 mx-auto">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
@@ -115,6 +119,7 @@ const Dashboard = () => {
                     ) : <h2 className="text-3xl font-bold text-[#9538E2] text-center my-5">No data in Wishlist</h2>
                 )}
             </div>
+            
             {/* Modal */}
             {isModalOpen && (
                 <div className="modal modal-open">
@@ -127,7 +132,8 @@ const Dashboard = () => {
                         <p className="text-[#09080F99] font-medium mt-5">Thanks for Purchasing.</p>
                         <p className="text-[#09080F99] font-medium mt-3">Total: ${totalPrice}</p>
                         <div className="modal-action flex justify-center items-center">
-                            <button className="btn rounded-full bg-[#9538E2] text-white hover:text-black" onClick={closeModalAndRedirect}>Close</button>
+                            <button className="btn rounded-full bg-[#9538E2] text-white hover:text-black" 
+                            onClick={closeModalAndRedirect}>Close</button>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const Upcoming = () => {
@@ -5,6 +6,9 @@ const Upcoming = () => {
     console.log(data);
     return (
         <div className="mb-10">
+            <Helmet>
+                <title>Upcoming | Gadget Heaven</title>
+            </Helmet>
             <div className="mt-5">
                 <div className="max-w-7xl mx-auto text-center bg-[#9538E2] py-10 space-y-3">
                     <h2 className="text-3xl font-bold text-white">Upcoming products</h2>

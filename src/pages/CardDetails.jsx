@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import StarRatings from "react-star-ratings";
 import { CartContext } from "../context/CartProvider";
 import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 const CardDetails = () => {
     const { product_id } = useParams();
@@ -41,6 +42,9 @@ const CardDetails = () => {
     const { product_title, product_image, price, description, specification, availability, rating, brand } = gadget;
     return (
         <div className="max-w-7xl mx-auto mt-5">
+            <Helmet>
+                <title>Gadget | Gadget Heaven</title>
+            </Helmet>
             <div className="text-center bg-[#9538E2] pt-5 pb-52">
                 <h2 className="text-3xl font-bold text-white">Product Details</h2>
                 <p className="text-white w-2/3 mx-auto">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartProvider";
 import { Area, Bar, CartesianGrid, ComposedChart, Legend, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from "recharts";
+import { Helmet } from "react-helmet-async";
 
 const Statistics = () => {
     const { cart } = useContext(CartContext); // Retrieve cart data from context or use your own data source
@@ -17,6 +18,9 @@ const Statistics = () => {
     }, [cart]);
     return (
         <div className="mb-10">
+            <Helmet>
+                <title>Statistics | Gadget Heaven</title>
+            </Helmet>
             <div className="mt-5">
                 <div className="max-w-7xl mx-auto text-center bg-[#9538E2] py-10">
                     <h2 className="text-3xl font-bold text-white">Statistics</h2>
