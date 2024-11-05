@@ -1,17 +1,43 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import StarRatings from "react-star-ratings";
+import { CartContext } from "../context/CartProvider";
+import { toast } from 'react-toastify';
 
 const CardDetails = () => {
     const { product_id } = useParams();
     const data = useLoaderData();
+    // const { addToCart, addToWishlist, wishlist } = useContext(CartContext);
+    const context = useContext(CartContext);
+    console.log(context);
+    if (!context) {
+        throw new Error("CardDetails must be used within a CartProvider");
+    }
+    const { addToCart, addToWishlist, wishlist } = context;
     const [gadget, setGadget] = useState({});
+    const [wishlistDisabled, setWishlistDisabled] = useState(false);
     useEffect(() => {
-        const singleData = data.find(gadget => gadget.product_id == product_id)
+        const singleData = data.find((gadget) => gadget.product_id === parseInt(product_id))
         setGadget(singleData)
-    }, [data, product_id])
+    }, [data, product_id]);
+    
+    useEffect(() => {
+        setWishlistDisabled(wishlist.some(item => item.product_id === parseInt(product_id)));
+    }, [wishlist, product_id]);
+
+    const handleAddToCart = () => {
+        addToCart(gadget);
+        toast.success('Item added to cart!');
+    };
+    const handleAddToWishlist = () => {
+        if (!wishlistDisabled) {
+            addToWishlist(gadget);
+            setWishlistDisabled(true);
+            toast.info('Item added to wishlist!');
+        }
+    };
 
     const { product_title, product_image, price, description, specification, availability, rating, brand } = gadget;
     return (
@@ -55,8 +81,12 @@ const CardDetails = () => {
                             <p className="rounded-full border p-1 bg-base-200">{rating}</p>
                         </div>
                         <h3 className="text-lg text-[#09080F99]">Brand: {brand}</h3>
-                        <button className="btn bg-[#9538E2] rounded-full text-white">Add To Cart <BsCart3></BsCart3></button>
-                        <button className="btn bg-white rounded-full ml-5">
+
+                        <button onClick={handleAddToCart}
+                            className="btn bg-[#9538E2] rounded-full text-white">Add To Cart <BsCart3></BsCart3></button>
+
+                        <button onClick={handleAddToWishlist}
+                            disabled={wishlistDisabled} className="btn bg-white rounded-full ml-5">
                             <FaRegHeart></FaRegHeart>
                         </button>
                     </div>

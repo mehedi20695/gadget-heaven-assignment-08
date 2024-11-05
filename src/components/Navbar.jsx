@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../context/CartProvider";
 
 const Navbar = () => {
+    const { cart, wishlist } = useContext(CartContext);
     return (
         <div className="mt-5">
             <div className="navbar max-w-6xl mx-auto">
@@ -60,16 +63,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
-                    <NavLink to="/">
+                    <NavLink to="/dashboard">
                         <button className="px-4 py-1 border bg-white rounded-full">
-                            <span className="badge badge-xs badge-error text-[8px] text-white">1</span>
+                            <span className="badge badge-xs badge-error text-[8px] text-white p-1">{cart.length}</span>
                             <BsCart3></BsCart3>
 
                         </button>
                     </NavLink>
-                    <NavLink to="/">
+                    
+                    <NavLink to="/dashboard">
                         <button className="px-4 py-1 border bg-white rounded-full">
-                            <span className="badge badge-xs badge-error text-[8px] text-white">1</span>
+                            <span className="badge badge-xs badge-error text-[8px] text-white p-1">{wishlist.length}</span>
                             <FaRegHeart></FaRegHeart>
 
                         </button>
