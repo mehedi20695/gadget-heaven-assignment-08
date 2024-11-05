@@ -5,7 +5,6 @@ import GadgetCard from "./GadgetCard";
 
 const Gadgets = () => {
     const data = useLoaderData();
-    console.log(data);
     const [category, setCategory] = useState("initial");
     return (
         <div className="max-w-6xl mx-auto mb-10">

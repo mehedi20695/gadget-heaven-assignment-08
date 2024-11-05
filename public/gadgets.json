@@ -6,7 +6,7 @@
       "category": "laptops",
       "price": 950,
       "description": "High-performance laptop with a sleek design, ideal for both work and play.",
-      "Specification": ["15-inch display", "16GB RAM", "512GB SSD", "Intel i7"],
+      "specification": ["15-inch display", "16GB RAM", "512GB SSD", "Intel i7"],
       "availability": true,
       "rating": 4.8,
       "brand": "TechMaster"
@@ -18,7 +18,7 @@
       "category": "phones",
       "price": 1200,
       "description": "Apple's latest iPhone with advanced camera and ProMotion display.",
-      "Specification": ["6.1-inch Super Retina", "128GB storage", "A16 Bionic chip", "5G support"],
+      "specification": ["6.1-inch Super Retina", "128GB storage", "A16 Bionic chip", "5G support"],
       "availability": true,
       "rating": 4.9,
       "brand": "Apple"
@@ -30,7 +30,7 @@
       "category": "laptops",
       "price": 1200,
       "description": "A powerful gaming laptop with a 144Hz display and RGB keyboard.",
-      "Specification": ["17-inch display", "32GB RAM", "1TB SSD", "NVIDIA RTX 3060"],
+      "specification": ["17-inch display", "32GB RAM", "1TB SSD", "NVIDIA RTX 3060"],
       "availability": true,
       "rating": 4.7,
       "brand": "GamerPro"
@@ -42,7 +42,7 @@
       "category": "laptops",
       "price": 550,
       "description": "Versatile tablet with detachable keyboard and stylus support.",
-      "Specification": ["10.5-inch display", "256GB storage", "Stylus support", "4G LTE"],
+      "specification": ["10.5-inch display", "256GB storage", "Stylus support", "4G LTE"],
       "availability": true,
       "rating": 4.3,
       "brand": "TabMaster"
@@ -54,7 +54,7 @@
       "category": "accessories",
       "price": 55,
       "description": "Fast-charging adapter for compatible devices.",
-      "Specification": ["USB-C", "Quick Charge 3.0", "20W output", "Compact design"],
+      "specification": ["USB-C", "Quick Charge 3.0", "20W output", "Compact design"],
       "availability": true,
       "rating": 4.6,
       "brand": "ChargeMax"
@@ -66,7 +66,7 @@
       "category": "laptops",
       "price": 450,
       "description": "Budget-friendly laptop for students with essential features.",
-      "Specification": ["14-inch display", "8GB RAM", "256GB SSD", "Intel i5"],
+      "specification": ["14-inch display", "8GB RAM", "256GB SSD", "Intel i5"],
       "availability": true,
       "rating": 4.2,
       "brand": "EduTech"
@@ -78,7 +78,7 @@
       "category": "laptops",
       "price": 999,
       "description": "Apple’s lightweight laptop with long battery life and M1 chip.",
-      "Specification": ["13.3-inch Retina display", "8GB RAM", "256GB SSD", "Apple M1"],
+      "specification": ["13.3-inch Retina display", "8GB RAM", "256GB SSD", "Apple M1"],
       "availability": true,
       "rating": 4.9,
       "brand": "Apple"
@@ -90,7 +90,7 @@
       "category": "accessories",
       "price": 50,
       "description": "Sleek and portable Bluetooth keyboard for all devices.",
-      "Specification": ["Bluetooth 5.0", "Slim design", "Rechargeable battery", "Multi-device support"],
+      "specification": ["Bluetooth 5.0", "Slim design", "Rechargeable battery", "Multi-device support"],
       "availability": true,
       "rating": 4.2,
       "brand": "KeyMagic"
@@ -102,7 +102,7 @@
       "category": "laptops",
       "price": 300,
       "description": "Affordable Chromebook with touch display and Google OS.",
-      "Specification": ["12-inch touch display", "4GB RAM", "64GB eMMC", "Chrome OS"],
+      "specification": ["12-inch touch display", "4GB RAM", "64GB eMMC", "Chrome OS"],
       "availability": true,
       "rating": 4.0,
       "brand": "Google"
@@ -115,7 +115,7 @@
       "category": "phones",
       "price": 1100,
       "description": "Samsung's high-end smartphone with exceptional camera and performance.",
-      "Specification": ["6.8-inch AMOLED", "256GB storage", "108MP camera", "5G support"],
+      "specification": ["6.8-inch AMOLED", "256GB storage", "108MP camera", "5G support"],
       "availability": true,
       "rating": 4.8,
       "brand": "Samsung"
@@ -127,7 +127,7 @@
       "category": "smart watches",
       "price": 300,
       "description": "Stylish smartwatch with fitness tracking and heart rate monitor.",
-      "Specification": ["1.4-inch AMOLED", "Water-resistant", "GPS", "Heart rate monitor"],
+      "specification": ["1.4-inch AMOLED", "Water-resistant", "GPS", "Heart rate monitor"],
       "availability": true,
       "rating": 4.5,
       "brand": "WearTime"
@@ -139,7 +139,7 @@
       "category": "smart watches",
       "price": 150,
       "description": "Affordable fitness tracker with essential health monitoring features.",
-      "Specification": ["OLED display", "Step counter", "Sleep tracking", "Calorie counter"],
+      "specification": ["OLED display", "Step counter", "Sleep tracking", "Calorie counter"],
       "availability": true,
       "rating": 4.1,
       "brand": "FitTrack"
@@ -152,7 +152,7 @@
       "category": "accessories",
       "price": 90,
       "description": "High-quality wireless earbuds with noise cancellation.",
-      "Specification": ["Bluetooth 5.0", "Noise cancellation", "Touch control", "20-hour battery"],
+      "specification": ["Bluetooth 5.0", "Noise cancellation", "Touch control", "20-hour battery"],
       "availability": true,
       "rating": 4.4,
       "brand": "EarJoy"
@@ -164,7 +164,7 @@
       "category": "power banks",
       "price": 65,
       "description": "Compact 10,000mAh power bank for charging on the go.",
-      "Specification": ["10,000mAh", "Dual USB output", "LED indicator", "Lightweight"],
+      "specification": ["10,000mAh", "Dual USB output", "LED indicator", "Lightweight"],
       "availability": true,
       "rating": 4.4,
       "brand": "PowerOn"
@@ -176,7 +176,7 @@
       "category": "power banks",
       "price": 75,
       "description": "High-capacity 20,000mAh power bank with multiple USB ports.",
-      "Specification": ["20,000mAh", "Dual USB output", "LED flashlight", "Fast charging"],
+      "specification": ["20,000mAh", "Dual USB output", "LED flashlight", "Fast charging"],
       "availability": true,
       "rating": 4.5,
       "brand": "EnergyPlus"

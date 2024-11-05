@@ -26,7 +26,7 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to='/' className={({ isActive }) =>
-                                `font-bold ${isActive ? 'text-white' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                                `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                             }>Home</NavLink>
                             <NavLink to='/statistics' className={({ isActive }) =>
                                 `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
