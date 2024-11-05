@@ -70,7 +70,7 @@ const Navbar = () => {
 
                         </button>
                     </NavLink>
-                    
+
                     <NavLink to="/dashboard">
                         <button className="px-4 py-1 border bg-white rounded-full">
                             <span className="badge badge-xs badge-error text-[8px] text-white p-1">{wishlist.length}</span>

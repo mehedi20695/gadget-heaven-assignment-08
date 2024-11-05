@@ -9,3 +9,7 @@
 html {
     overflow-y: scroll;
 }
+.tab-active{
+    background-color: white;
+    color: #9538E2;
+}

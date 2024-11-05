@@ -43,8 +43,9 @@ const CartProvider = ({ children }) => {
         setWishlist(wishlist.filter(item => item.product_id !== product_Id));
     };
     // Function to clear the cart
-    const clearCart = () => {
-        setCart([]);
+    const updateCart = (items) => {
+        setCart(items);
+        localStorage.setItem("cart", JSON.stringify(items));
     };
     return (
         <CartContext.Provider
@@ -55,7 +56,7 @@ const CartProvider = ({ children }) => {
                 addToWishlist,
                 removeFromCart,
                 removeFromWishlist,
-                clearCart
+                updateCart
             }}
         >
             {children}

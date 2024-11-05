@@ -31,6 +31,7 @@ const CardDetails = () => {
         addToCart(gadget);
         toast.success('Item added to cart!');
     };
+    
     const handleAddToWishlist = () => {
         if (!wishlistDisabled) {
             addToWishlist(gadget);
