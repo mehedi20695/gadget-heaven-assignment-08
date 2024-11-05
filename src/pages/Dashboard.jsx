@@ -12,8 +12,8 @@ const Dashboard = () => {
     const [activeTab, setActiveTab] = useState("cart");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
-    // const { updateCart } = useContext(CartContext);
     const { updateCart } = useContext(CartContext);
+
     useEffect(() => {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
@@ -58,39 +58,36 @@ const Dashboard = () => {
             </div>
             <div className="max-w-6xl mx-auto">
                 {activeTab === "cart" && (
-                    cartItems.length > 0 ? (
-                        <div className="cart-tab">
-                            <div className="md:flex md:justify-between my-10">
-                                <h3 className="text-2xl font-bold">Cart</h3>
-                                <div className="space-x-5">
-                                    <span className="text-2xl font-bold">Total Price: ${totalPrice}</span>
-                                    <button className="border border-[#9538E2] btn rounded-full text-[#9538E2] bg-white"
-                                        onClick={sortCartByPrice}>
-                                        Sort by Price <HiOutlineSortDescending /></button>
+                    <div className="cart-tab">
+                        <div className="md:flex md:justify-between my-10">
+                            <h3 className="text-2xl font-bold">Cart</h3>
+                            <div className="space-x-5">
+                                <span className="text-2xl font-bold">Total Price: ${totalPrice}</span>
+                                <button className="border border-[#9538E2] btn rounded-full text-[#9538E2] bg-white"
+                                    onClick={sortCartByPrice}>
+                                    Sort by Price <HiOutlineSortDescending /></button>
 
-                                    <button className="btn rounded-full bg-[#9538E2] text-white"
-                                        onClick={handlePurchase} disabled={totalPrice === 0}>Purchase</button>
+                                <button className="btn rounded-full bg-[#9538E2] text-white"
+                                    onClick={handlePurchase} disabled={totalPrice === 0}>Purchase</button>
+                            </div>
+                        </div>
+                        {cartItems.length > 0 ? (cartItems.map((item, index) => (
+                            <div key={index} className="grid grid-cols-1 md:grid-cols-8 p-4 border rounded-xl items-center gap-5 my-5">
+                                <div className="col-span-2">
+                                    <img className="object-cover rounded-xl" src={item.product_image} alt="" />
+                                </div>
+                                <div className="space-y-5 col-span-5">
+                                    <h3 className="text-2xl font-semibold">{item.product_title}</h3>
+                                    <h4 className="text-lg text-[#09080F99]">{item.description}</h4>
+                                    <h4 className="text-xl font-semibold">Price: ${item.price}</h4>
+                                </div>
+                                <div className="text-red-600 text-2xl col-span-1">
+                                    <MdDisabledByDefault />
                                 </div>
                             </div>
-                            {cartItems.map((item, index) => (
-                                <div key={index} className="grid grid-cols-1 md:grid-cols-8 p-4 border rounded-xl items-center gap-5 my-5">
-                                    <div className="col-span-2">
-                                        <img className="object-cover rounded-xl" src={item.product_image} alt="" />
-                                    </div>
-                                    <div className="space-y-5 col-span-5">
-                                        <h3 className="text-2xl font-semibold">{item.product_title}</h3>
-                                        <h4 className="text-lg text-[#09080F99]">{item.description}</h4>
-                                        <h4 className="text-xl font-semibold">Price: ${item.price}</h4>
-                                    </div>
-                                    <div className="text-red-600 text-2xl col-span-1">
-                                        <MdDisabledByDefault />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <h2 className="text-3xl font-bold text-[#9538E2] text-center my-5">No data in Cart</h2>
-                    )
+                        ))) : (<h2 className="text-3xl font-bold text-[#9538E2] text-center my-5">No data in Cart</h2>)}
+                    </div>
+
                 )}
 
                 {activeTab === "wishlist" && (

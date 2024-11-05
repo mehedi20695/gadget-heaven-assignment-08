@@ -9,9 +9,7 @@ import { toast } from 'react-toastify';
 const CardDetails = () => {
     const { product_id } = useParams();
     const data = useLoaderData();
-    // const { addToCart, addToWishlist, wishlist } = useContext(CartContext);
     const context = useContext(CartContext);
-    console.log(context);
     if (!context) {
         throw new Error("CardDetails must be used within a CartProvider");
     }

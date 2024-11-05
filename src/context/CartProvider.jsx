@@ -34,15 +34,17 @@ const CartProvider = ({ children }) => {
             setWishlist([...wishlist, product]);
         }
     };
-    // Function to remove item from cart
-    const removeFromCart = (product_Id) => {
-        setCart(cart.filter(item => item.product_id !== product_Id));
-    };
-     // Function to remove item from wishlist
-     const removeFromWishlist = (product_Id) => {
-        setWishlist(wishlist.filter(item => item.product_id !== product_Id));
-    };
-    // Function to clear the cart
+
+    // // Function to remove item from cart
+    // const removeFromCart = (product) => {
+    //     setCart(cart.filter(item => item.product_id !== product.product_Id));
+    // };
+    //  // Function to remove item from wishlist
+    //  const removeFromWishlist = (product) => {
+    //     setWishlist(wishlist.filter(item => item.product_id !== product.product_Id));
+    // };
+    // Function to clear/update the cart
+    
     const updateCart = (items) => {
         setCart(items);
         localStorage.setItem("cart", JSON.stringify(items));
@@ -54,8 +56,6 @@ const CartProvider = ({ children }) => {
                 wishlist,
                 addToCart,
                 addToWishlist,
-                removeFromCart,
-                removeFromWishlist,
                 updateCart
             }}
         >

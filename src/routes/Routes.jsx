@@ -25,6 +25,7 @@ const routes = createBrowserRouter([
             {
                 path: '/upcoming',
                 element: <Upcoming></Upcoming>,
+                loader: () => fetch('../upcoming.json')
             },
             {
                 path: '/dashboard',

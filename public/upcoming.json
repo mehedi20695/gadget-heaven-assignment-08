@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "SmartWatch X2",
+      "releaseDate": "2024-12-01",
+      "description": "A powerful smartwatch with advanced health tracking and long battery life.",
+      "imageUrl": "https://i.ibb.co.com/jLX3HyF/x2-watch.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Noise Cancelling Headphones Pro",
+      "releaseDate": "2024-11-20",
+      "description": "Top-of-the-line headphones with noise cancellation and high-fidelity sound.",
+      "imageUrl": "https://i.ibb.co.com/7J116bC/headphone-pro.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ultra HD 4K Drone",
+      "releaseDate": "2025-01-10",
+      "description": "Capture stunning aerial footage with this high-performance drone.",
+      "imageUrl": "https://i.ibb.co.com/TKrtccB/drone.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Smart Home Assistant 3.0",
+      "releaseDate": "2025-02-05",
+      "description": "An AI-powered home assistant that connects all your smart devices effortlessly.",
+      "imageUrl": "https://i.ibb.co.com/XFPmcL5/home-assistance.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Portable Solar Charger",
+      "releaseDate": "2024-12-15",
+      "description": "Stay powered on the go with this compact and efficient solar charger.",
+      "imageUrl": "https://i.ibb.co.com/6JwnkQF/solar-charger.jpg"
+    }
+  ]
+  

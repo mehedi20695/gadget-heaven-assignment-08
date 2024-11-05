@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { useContext } from "react";
@@ -6,8 +6,13 @@ import { CartContext } from "../context/CartProvider";
 
 const Navbar = () => {
     const { cart, wishlist } = useContext(CartContext);
+
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
+    
     return (
-        <div className="mt-5">
+        <div className={`max-w-7xl mx-auto mt-3 pt-3 ${isHomePage ? "bg-[#9538E2] rounded-t-xl" : "bg-white"
+            }`}>
             <div className="navbar max-w-6xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -29,37 +34,37 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to='/' className={({ isActive }) =>
-                                `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                                `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                             }>Home</NavLink>
                             <NavLink to='/statistics' className={({ isActive }) =>
-                                `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                                `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                             }>Statistics</NavLink>
                             <NavLink to='/dashboard' className={({ isActive }) =>
-                                `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                                `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                             }>Dashboard</NavLink>
                             <NavLink to='/upcoming' className={({ isActive }) =>
-                                `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
-                            }>Upcoming</NavLink>
+                                `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                            }>Upcoming Products</NavLink>
                         </ul>
                     </div>
                     <NavLink to='/' className={({ isActive }) =>
-                        `font-bold text-xl ${isActive ? 'text-white' : 'hover:text-[#4ee358]'}`
+                        `font-bold text-xl ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358]'}`
                     }>Gadget Heaven</NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal space-x-5">
                         <NavLink to='/' className={({ isActive }) =>
-                            `font-bold ${isActive ? 'text-white' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                            `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                         }>Home</NavLink>
                         <NavLink to='/statistics' className={({ isActive }) =>
-                            `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                            `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                         }>Statistics</NavLink>
                         <NavLink to='/dashboard' className={({ isActive }) =>
-                            `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                            `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
                         }>Dashboard</NavLink>
                         <NavLink to='/upcoming' className={({ isActive }) =>
-                            `font-bold ${isActive ? 'text-[#9538E2]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
-                        }>Upcoming</NavLink>
+                            `font-bold ${isActive ? 'text-[#4ee358]' : 'hover:text-[#4ee358] text-[#0B0B0BB3] font-medium'}`
+                        }>Upcoming Products</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
