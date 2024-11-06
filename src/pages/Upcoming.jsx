@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Upcoming = () => {
     const data = useLoaderData();
-    console.log(data);
+    const [notifiedProducts, setNotifiedProducts] = useState([]);
+
+    const handleNotifyClick = (productId) => {
+        toast.success("We will notify you when the product is released");
+        setNotifiedProducts((prev) => [...prev, productId]);
+    };
     return (
         <div className="mb-10">
             <Helmet>
@@ -25,8 +32,10 @@ const Upcoming = () => {
                                 <h3 className="text-2xl font-semibold">{product.name}</h3>
                                 <p className="text-lg text-[#09080F99]">{product.description}</p>
                                 <p className="text-xl font-semibold]">Release Date: {product.releaseDate}</p>
-                                <button className="mt-4 bg-[#9538E2] text-white px-4 py-2 rounded-full hover:bg-blue-600">
-                                    Notify Us
+                                <button onClick={() => handleNotifyClick(product.id)}
+                                    disabled={notifiedProducts.includes(product.id)} 
+                                    className="mt-4 bg-[#9538E2] text-white px-4 py-2 rounded-full hover:bg-blue-600 disabled:opacity-50">
+                                    {notifiedProducts.includes(product.id) ? "Notified" : "Notify Me"}
                                 </button>
                             </div>
                         </div>

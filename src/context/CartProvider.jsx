@@ -1,19 +1,18 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext();
 
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(() => {
-        // Retrieve cart from LocalStorage
         const savedCart = localStorage.getItem('cart');
         return savedCart ? JSON.parse(savedCart) : [];
     });
 
     const [wishlist, setWishlist] = useState(() => {
-        // Retrieve wishlist from LocalStorage
         const savedWishlist = localStorage.getItem('wishlist');
         return savedWishlist ? JSON.parse(savedWishlist) : [];
     });
@@ -27,23 +26,34 @@ const CartProvider = ({ children }) => {
     }, [wishlist]);
 
     const addToCart = (product) => {
-        // Check if product is already in the cart
         if (!cart.some(item => item.product_id === product.product_id)) {
             setCart([...cart, product]);
         }
     };
 
     const addToWishlist = (product) => {
-        // Check if product is already in the wishlist
         if (!wishlist.some(item => item.product_id === product.product_id)) {
             setWishlist([...wishlist, product]);
         }
     };
-        
+
+    const removeFromCart = (productId) => {
+        const updatedCart = cart.filter(item => item.product_id !== productId);
+        setCart(updatedCart);
+        toast.warning("Product removed from cart!");
+    };
+
+    const removeFromWishlist = (productId) => {
+        const updatedWishlist = wishlist.filter(item => item.product_id !== productId);
+        setWishlist(updatedWishlist);
+        toast.warning("Product removed from wishlist!");
+    };
+
     const updateCart = (items) => {
         setCart(items);
         localStorage.setItem("cart", JSON.stringify(items));
     };
+    
     return (
         <CartContext.Provider
             value={{
@@ -51,6 +61,8 @@ const CartProvider = ({ children }) => {
                 wishlist,
                 addToCart,
                 addToWishlist,
+                removeFromCart,
+                removeFromWishlist,
                 updateCart
             }}
         >

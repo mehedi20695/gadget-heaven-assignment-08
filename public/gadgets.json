@@ -13,15 +13,15 @@
     },
     {
       "product_id": 2,
-      "product_title": "IPhone 14 Pro",
-      "product_image": "https://i.ibb.co.com/cDPhGJJ/iphone-14.jpg",
-      "category": "phones",
-      "price": 1200,
-      "description": "Apple's latest iPhone with advanced camera and ProMotion display.",
-      "specification": ["6.1-inch Super Retina", "128GB storage", "A16 Bionic chip", "5G support"],
+      "product_title": "Chromebook Plus",
+      "product_image": "https://i.ibb.co.com/r6TYfXZ/chromebook.jpg",
+      "category": "laptops",
+      "price": 300,
+      "description": "Affordable Chromebook with touch display and Google OS.",
+      "specification": ["12-inch touch display", "4GB RAM", "64GB eMMC", "Chrome OS"],
       "availability": true,
-      "rating": 4.9,
-      "brand": "Apple"
+      "rating": 4.0,
+      "brand": "Google"
     },
     {
       "product_id": 3,
@@ -32,7 +32,7 @@
       "description": "A powerful gaming laptop with a 144Hz display and RGB keyboard.",
       "specification": ["17-inch display", "32GB RAM", "1TB SSD", "NVIDIA RTX 3060"],
       "availability": true,
-      "rating": 4.7,
+      "rating": 4.5,
       "brand": "GamerPro"
     },
     {
@@ -44,23 +44,11 @@
       "description": "Versatile tablet with detachable keyboard and stylus support.",
       "specification": ["10.5-inch display", "256GB storage", "Stylus support", "4G LTE"],
       "availability": true,
-      "rating": 4.3,
+      "rating": 3.8,
       "brand": "TabMaster"
     },
     {
       "product_id": 5,
-      "product_title": "FastCharge Adapter",
-      "product_image": "https://i.ibb.co.com/nnLZKpX/chargers-1.jpg",
-      "category": "accessories",
-      "price": 55,
-      "description": "Fast-charging adapter for compatible devices.",
-      "specification": ["USB-C", "Quick Charge 3.0", "20W output", "Compact design"],
-      "availability": true,
-      "rating": 4.6,
-      "brand": "ChargeMax"
-    },
-    {
-      "product_id": 6,
       "product_title": "Student Laptop",
       "product_image": "https://i.ibb.co.com/PzrX86d/laptop-12.jpg",
       "category": "laptops",
@@ -72,7 +60,7 @@
       "brand": "EduTech"
     },
     {
-      "product_id": 7,
+      "product_id": 6,
       "product_title": "MacBook Air",
       "product_image": "https://i.ibb.co.com/XL0Rjnd/macbook-air.jpg",
       "category": "laptops",
@@ -80,11 +68,36 @@
       "description": "Apple’s lightweight laptop with long battery life and M1 chip.",
       "specification": ["13.3-inch Retina display", "8GB RAM", "256GB SSD", "Apple M1"],
       "availability": true,
-      "rating": 4.9,
+      "rating": 4.6,
       "brand": "Apple"
     },
     {
+      "product_id": 7,
+      "product_title": "IPhone 14 Pro",
+      "product_image": "https://i.ibb.co.com/cDPhGJJ/iphone-14.jpg",
+      "category": "phones",
+      "price": 1200,
+      "description": "Apple's latest iPhone with advanced camera and ProMotion display.",
+      "specification": ["6.1-inch Super Retina", "128GB storage", "A16 Bionic chip", "5G support"],
+      "availability": true,
+      "rating": 4.8,
+      "brand": "Apple"
+    },
+
+    {
       "product_id": 8,
+      "product_title": "FastCharge Adapter",
+      "product_image": "https://i.ibb.co.com/nnLZKpX/chargers-1.jpg",
+      "category": "accessories",
+      "price": 55,
+      "description": "Fast-charging adapter for compatible devices.",
+      "specification": ["USB-C", "Quick Charge 3.0", "20W output", "Compact design"],
+      "availability": true,
+      "rating": 4.6,
+      "brand": "ChargeMax"
+    },
+    {
+      "product_id": 9,
       "product_title": "Bluetooth Keyboard Slim",
       "product_image": "https://i.ibb.co.com/bbQqRv3/keyboard.jpg",
       "category": "accessories",
@@ -94,18 +107,6 @@
       "availability": true,
       "rating": 4.2,
       "brand": "KeyMagic"
-    },
-    {
-      "product_id": 9,
-      "product_title": "Chromebook Plus",
-      "product_image": "https://i.ibb.co.com/r6TYfXZ/chromebook.jpg",
-      "category": "laptops",
-      "price": 300,
-      "description": "Affordable Chromebook with touch display and Google OS.",
-      "specification": ["12-inch touch display", "4GB RAM", "64GB eMMC", "Chrome OS"],
-      "availability": true,
-      "rating": 4.0,
-      "brand": "Google"
     },
     
     {
@@ -166,7 +167,7 @@
       "description": "Compact 10,000mAh power bank for charging on the go.",
       "specification": ["10,000mAh", "Dual USB output", "LED indicator", "Lightweight"],
       "availability": true,
-      "rating": 4.4,
+      "rating": 4.0,
       "brand": "PowerOn"
     },
     {
@@ -178,7 +179,7 @@
       "description": "High-capacity 20,000mAh power bank with multiple USB ports.",
       "specification": ["20,000mAh", "Dual USB output", "LED flashlight", "Fast charging"],
       "availability": true,
-      "rating": 4.5,
+      "rating": 4.2,
       "brand": "EnergyPlus"
     }
   ]

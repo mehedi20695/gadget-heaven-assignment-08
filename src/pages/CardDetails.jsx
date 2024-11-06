@@ -9,33 +9,41 @@ import { Helmet } from "react-helmet-async";
 
 const CardDetails = () => {
     const { product_id } = useParams();
+
     const data = useLoaderData();
+
     const context = useContext(CartContext);
-    if (!context) {
-        throw new Error("CardDetails must be used within a CartProvider");
-    }
-    const { addToCart, addToWishlist, wishlist } = context;
+    const { addToCart, addToWishlist, wishlist, cart } = context;
+
     const [gadget, setGadget] = useState({});
     const [wishlistDisabled, setWishlistDisabled] = useState(false);
+    const [isProductInCart, setIsProductInCart] = useState(false);
+
     useEffect(() => {
         const singleData = data.find((gadget) => gadget.product_id === parseInt(product_id))
         setGadget(singleData)
     }, [data, product_id]);
-    
+
     useEffect(() => {
         setWishlistDisabled(wishlist.some(item => item.product_id === parseInt(product_id)));
-    }, [wishlist, product_id]);
+        setIsProductInCart(cart.some(item => item.product_id === parseInt(product_id)));
+    }, [wishlist, cart, product_id]);
 
     const handleAddToCart = () => {
-        addToCart(gadget);
-        toast.success('Item added to cart!');
+        if (isProductInCart) { 
+            toast.info('Product already added!');
+        } else {
+            addToCart(gadget);
+            toast.success('Product added to cart!');
+            setIsProductInCart(true);
+        }
     };
-    
+
     const handleAddToWishlist = () => {
         if (!wishlistDisabled) {
             addToWishlist(gadget);
             setWishlistDisabled(true);
-            toast.info('Item added to wishlist!');
+            toast.info('Product added to wishlist!');
         }
     };
 

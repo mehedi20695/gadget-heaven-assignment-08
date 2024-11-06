@@ -69,16 +69,16 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end space-x-3">
                     <NavLink to="/dashboard">
-                        <button className="px-4 py-1 border bg-white rounded-full">
-                            <span className="badge badge-xs badge-error text-[8px] text-white p-1">{cart.length}</span>
+                        <button className="px-6 py-4  border-2 bg-white rounded-full">
+                            {cart.length > 0 ? (<span className="badge badge-xs badge-error text-[8px] text-white p-1">{cart.length}</span>):("")}
                             <BsCart3></BsCart3>
 
                         </button>
                     </NavLink>
 
                     <NavLink to="/dashboard">
-                        <button className="px-4 py-1 border bg-white rounded-full">
-                            <span className="badge badge-xs badge-error text-[8px] text-white p-1">{wishlist.length}</span>
+                        <button className="px-6 py-4 border-2 bg-white rounded-full">
+                            {wishlist.length > 0 ? (<span className="badge badge-xs badge-error text-[8px] text-white p-1">{wishlist.length}</span>) : ("")}
                             <FaRegHeart></FaRegHeart>
 
                         </button>

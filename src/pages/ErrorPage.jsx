@@ -7,7 +7,7 @@ const ErrorPage = () => {
             <Helmet>
                 <title>Error | Gadget Heaven</title>
             </Helmet>
-            <h1 className="text-5xl font-medium">Page not found.</h1>
+            <h1 className="text-5xl font-medium mb-10">Page not found.</h1>
             <p className="pb-5">404</p>
             <Link to='/'>
                 <button className="btn btn-primary">Home</button>

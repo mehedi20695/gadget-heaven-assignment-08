@@ -5,23 +5,22 @@ import { useNavigate } from "react-router-dom";
 import ModalImg from "../assets/group.png"
 import { CartContext } from "../context/CartProvider";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
-    const [cartItems, setCartItems] = useState([]);
-    const [wishlistItems, setWishlistItems] = useState([]);
+    // const [cartItems, setCartItems] = useState([]);
+    // const [wishlistItems, setWishlistItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [activeTab, setActiveTab] = useState("cart");
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     const navigate = useNavigate();
-    const { updateCart } = useContext(CartContext);
+
+    const { cart, wishlist, addToCart, removeFromCart, removeFromWishlist, updateCart } = useContext(CartContext);
 
     useEffect(() => {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-        setCartItems(cart);
-        setWishlistItems(wishlist);
         calculateTotal(cart);
-    }, []);
+    }, [cart]);
 
     const calculateTotal = (items) => {
         const total = items.reduce((sum, item) => sum + item.price, 0);
@@ -29,22 +28,30 @@ const Dashboard = () => {
     };
 
     const sortCartByPrice = () => {
-        const sortedItems = [...cartItems].sort((a, b) => b.price - a.price);
-        setCartItems(sortedItems);
+        const sortedItems = [...cart].sort((a, b) => b.price - a.price);
+        updateCart(sortedItems);
     };
+
     const handlePurchase = () => {
         setIsModalOpen(true);
     };
 
     const closeModalAndRedirect = () => {
-        if (cartItems.length === 0) return;
+        if (cart.length === 0) return;
         updateCart([]);
-        setCartItems([]);
         setTotalPrice(0);
         localStorage.removeItem("cart");
         navigate("/");
         setIsModalOpen(false);
     };
+
+    const addToCartFromWishlist = (item) => {
+        addToCart(item);
+        toast.success("Product added to cart!")
+        removeFromWishlist(item.product_id);
+        
+    };
+
     return (
         <div className="mt-5">
             <Helmet>
@@ -75,7 +82,7 @@ const Dashboard = () => {
                                     onClick={handlePurchase} disabled={totalPrice === 0}>Purchase</button>
                             </div>
                         </div>
-                        {cartItems.length > 0 ? (cartItems.map((item, index) => (
+                        {cart.length > 0 ? (cart.map((item, index) => (
                             <div key={index} className="grid grid-cols-1 md:grid-cols-8 p-4 border rounded-xl items-center gap-5 my-5">
                                 <div className="col-span-2">
                                     <img className="object-cover rounded-xl" src={item.product_image} alt="" />
@@ -85,7 +92,8 @@ const Dashboard = () => {
                                     <h4 className="text-lg text-[#09080F99]">{item.description}</h4>
                                     <h4 className="text-xl font-semibold">Price: ${item.price}</h4>
                                 </div>
-                                <div className="text-red-600 text-2xl col-span-1">
+                                <div onClick={() => removeFromCart(item.product_id)}
+                                className="text-red-600 text-2xl col-span-1">
                                     <MdDisabledByDefault />
                                 </div>
                             </div>
@@ -95,10 +103,10 @@ const Dashboard = () => {
                 )}
 
                 {activeTab === "wishlist" && (
-                    wishlistItems.length > 0 ? (
+                    wishlist.length > 0 ? (
                         <div className="wishlist-tab my-10">
                             <h3 className="text-2xl font-bold mb-10">Wishlist</h3>
-                            {wishlistItems.map((item, index) => (
+                            {wishlist.map((item, index) => (
                                 <div key={index} className="grid grid-cols-1 md:grid-cols-8 p-4 border rounded-xl items-center gap-5 my-5">
                                     <div className="col-span-2">
                                         <img className="object-cover rounded-xl" src={item.product_image} alt="" />
@@ -107,10 +115,10 @@ const Dashboard = () => {
                                         <h3 className="text-2xl font-semibold">{item.product_title}</h3>
                                         <h4 className="text-lg text-[#09080F99]">{item.description}</h4>
                                         <h4 className="text-xl font-semibold">Price: ${item.price}</h4>
-                                        <button
-                                            className="btn bg-[#9538E2] rounded-full text-white">Add To Cart</button>
+                                        <button onClick={() => addToCartFromWishlist(item)}
+                                        className="btn bg-[#9538E2] rounded-full text-white">Add To Cart</button>
                                     </div>
-                                    <div className="text-red-600 text-2xl col-span-1">
+                                    <div onClick={() => removeFromWishlist(item.product_id)} className="text-red-600 text-2xl col-span-1">
                                         <MdDisabledByDefault />
                                     </div>
                                 </div>
