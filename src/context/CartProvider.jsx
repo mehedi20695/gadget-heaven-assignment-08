@@ -43,10 +43,12 @@ const CartProvider = ({ children }) => {
         toast.warning("Product removed from cart!");
     };
 
-    const removeFromWishlist = (productId) => {
+    const removeFromWishlist = (productId, skipToast = false) => {
         const updatedWishlist = wishlist.filter(item => item.product_id !== productId);
         setWishlist(updatedWishlist);
-        toast.warning("Product removed from wishlist!");
+        if (!skipToast) {
+            toast.warning("Product removed from wishlist!");
+        }
     };
 
     const updateCart = (items) => {

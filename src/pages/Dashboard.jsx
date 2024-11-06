@@ -47,9 +47,8 @@ const Dashboard = () => {
 
     const addToCartFromWishlist = (item) => {
         addToCart(item);
-        toast.success("Product added to cart!")
-        removeFromWishlist(item.product_id);
-        
+        removeFromWishlist(item.product_id, true);
+        toast.success("Product added to cart!");
     };
 
     return (
